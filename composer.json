@@ -1,0 +1,39 @@
+{
+  "name": "bytic/mail-templates",
+  "type": "library",
+  "description": "Mail Templates for bytic framework",
+  "homepage": "https://github.com/bytic/mail-template",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gabriel Solomon",
+      "email": "hello@gabrielsolomon.ro"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Bytic\\MailTemplates\\": "src",
+      "Bytic\\MailTemplates\\Resources\\": "resources"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Bytic\\MailTemplates\\Tests\\": "tests/src",
+      "Bytic\\MailTemplates\\Tests\\Fixtures\\": "tests/fixtures"
+    }
+  },
+  "require": {
+    "bytic/mail": "^1.0",
+    "bytic/view": "^1.0",
+    "bytic/package-base": "^1.0",
+    "tijsverkoyen/css-to-inline-styles": "^2.2.2"
+  },
+  "require-dev": {
+    "bytic/phpqatools": "^1.0"
+  },
+  "scripts": {
+  },
+
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
