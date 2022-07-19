@@ -2,11 +2,18 @@
 
 namespace Bytic\MailTemplates\Resources\Templates\Ink;
 
+use Pinky;
 use Bytic\MailTemplates\Templates\ViewTemplate;
 
 class InkTemplate extends ViewTemplate
 {
     public const TEMPLATE_NAME = 'Ink';
+
+    public function render()
+    {
+        $body = parent::render();
+        return false === ($html = Pinky\transformString($body)->saveHTML()) ? '' : $html;
+    }
 
     protected function generateStyles(): array
     {

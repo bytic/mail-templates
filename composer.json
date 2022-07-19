@@ -26,7 +26,8 @@
     "bytic/mail": "^1.0",
     "bytic/view": "^1.0",
     "bytic/package-base": "^1.0",
-    "tijsverkoyen/css-to-inline-styles": "^2.2.2"
+    "tijsverkoyen/css-to-inline-styles": "^2.2.2",
+    "lorenzo/pinky": "^1.0.5"
   },
   "require-dev": {
     "bytic/phpqatools": "^1.0"

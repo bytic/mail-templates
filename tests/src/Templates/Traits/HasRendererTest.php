@@ -11,17 +11,17 @@ class HasRendererTest extends TestCase
     {
         $template = InkTemplate::create();
         $template->addPath(TEST_FIXTURE_PATH . '/views/');
+        $template->with([
+            'content' => '/content/basic',
+            'name' => 'John'
+        ]);
+        $content = $template->render();
 
+        $pathEmail = TEST_FIXTURE_PATH . '/emails/basic.html';
+        file_put_contents($pathEmail, $content);
         self::assertSame(
-            file_get_contents(TEST_FIXTURE_PATH . '/emails/basic.html'),
-            $template
-                ->with(
-                    [
-                        'content' => '/content/basic',
-                        'name' => 'John'
-                    ]
-                )
-                ->render()
+            file_get_contents($pathEmail),
+            $content
         );
     }
 }
