@@ -5,11 +5,12 @@ namespace Bytic\MailTemplates\Tests\Templates\Traits;
 use Bytic\MailTemplates\Resources\Templates\Ink\InkTemplate;
 use Bytic\Phpqa\PHPUnit\TestCase;
 
-class HasBaseTemplateTest extends TestCase
+class HasStylesTest extends TestCase
 {
-    public function test_generateBasePath()
+    public function test_getStyles()
     {
         $inkTemplate = new InkTemplate();
-        self::assertStringEndsWith('mail-templates/resources/Templates/Ink', $inkTemplate->getBasePath());
+        $styles = $inkTemplate->getStyles();
+        self::assertStringEndsWith('/resources/Templates/Inkassets/css/ink.css', $styles[0]);
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Bytic\MailTemplates\Settings;
+namespace Bytic\MailTemplates\Configuration;
 
-class Settings
+class Configuration
 {
    protected array $logo = [];
 
@@ -21,7 +21,6 @@ class Settings
     {
         return $this->logo['url'] ?? null;
     }
-
 
     /**
      * @return string

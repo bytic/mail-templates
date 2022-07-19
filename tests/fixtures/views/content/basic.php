@@ -1,0 +1,4 @@
+<row>
+    <columns large="6"></columns>
+    <columns large="6"></columns>
+</row>

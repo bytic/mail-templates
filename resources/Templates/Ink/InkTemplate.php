@@ -11,8 +11,8 @@ class InkTemplate extends ViewTemplate
     protected function generateStyles(): array
     {
         return [
-            $this->prependPaths('assets/css/ink.css'),
-            $this->prependPaths('assets/css/reset.css'),
+            $this->prefixPaths('assets/css/ink.css'),
+            $this->prefixPaths('assets/css/reset.css'),
         ];
     }
 }
