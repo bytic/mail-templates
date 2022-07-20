@@ -3,8 +3,9 @@
 namespace Bytic\MailTemplates\Templates;
 
 use Bytic\MailTemplates\Configuration\Configurable;
+use Stringable;
 
-abstract class AbstractTemplate implements TemplateInterface
+abstract class AbstractTemplate implements TemplateInterface, Stringable
 {
     protected ?string $name = null;
     public const TEMPLATE_NAME = null;
@@ -26,6 +27,11 @@ abstract class AbstractTemplate implements TemplateInterface
     public static function create(): self
     {
         return new static();
+    }
+
+    public function __toString()
+    {
+        return $this->render();
     }
 
     /**

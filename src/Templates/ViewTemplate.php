@@ -10,7 +10,7 @@ abstract class ViewTemplate extends AbstractTemplate
     public function render()
     {
         $data = $this->buildViewData();
-        if ($data['content']) {
+        if (isset($data['content'])) {
             $engine = $this->getRenderer()->engine();
             $engine->setBlock('content', $data['content']);
         }
