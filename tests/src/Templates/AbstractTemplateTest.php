@@ -10,7 +10,7 @@ class AbstractTemplateTest extends TestCase
     public function test_stringable()
     {
         self::assertStringEndsWith(
-            '</html>'."\n",
+            '</html>',
             (string) InkTemplate::create()
         );
     }

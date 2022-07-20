@@ -9,17 +9,15 @@ class InkTemplate extends ViewTemplate
 {
     public const TEMPLATE_NAME = 'Ink';
 
-    public function render()
+    public function __construct()
     {
-        $body = parent::render();
-        return false === ($html = Pinky\transformString($body)->saveHTML()) ? '' : $html;
+        parent::__construct();
+        $this->addStylesheet($this->getAbsolutePath('/assets/foundation-emails.css'));
     }
 
-    protected function generateStyles(): array
+    public function renderContent()
     {
-        return [
-            $this->prefixPaths('assets/css/ink.css'),
-            $this->prefixPaths('assets/css/reset.css'),
-        ];
+        $body = parent::renderContent();
+        return false === ($html = Pinky\transformString($body)->saveHTML()) ? '' : $html;
     }
 }

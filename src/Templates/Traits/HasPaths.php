@@ -13,7 +13,7 @@ trait HasPaths
      */
     protected array $paths = [];
 
-    public function prefixPaths($path): ?string
+    public function getAbsolutePath($path): ?string
     {
         return $this->getBasePath() . $path;
     }

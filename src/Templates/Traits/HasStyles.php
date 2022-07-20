@@ -6,7 +6,7 @@ use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
 trait HasStyles
 {
-    protected ?array $styles = null;
+    protected ?array $styles = [];
 
     protected bool $inlineStyles = true;
 
@@ -16,7 +16,7 @@ trait HasStyles
     public function getStyles(): ?array
     {
         if ($this->styles === null) {
-            $this->styles = $this->generateStyles();
+            $this->styles = [];
         }
         return $this->styles;
     }
@@ -29,6 +29,12 @@ trait HasStyles
         $this->styles = $styles;
     }
 
+    public function addStylesheet(string $resource): self
+    {
+        $this->styles[] = $resource;
+        return $this;
+    }
+
     protected function inlineStylesFor($content)
     {
         if ($this->inlineStyles !== true) {
@@ -39,11 +45,9 @@ trait HasStyles
         $css = '';
         foreach ($styles as $style) {
             $css .= file_get_contents($style);
-            $content = str_replace($style['selector'], $style['style'], $content);
+//            $content = str_replace($style['selector'], $style['style'], $content);
         }
 
         return (new CssToInlineStyles())->convert($content, $css);
     }
-
-    abstract protected function generateStyles(): array;
 }

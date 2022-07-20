@@ -14,8 +14,8 @@ trait HasRenderer
     /**
      * Set the view and view data for the message.
      *
-     * @param  string  $view
-     * @param  array  $data
+     * @param string $view
+     * @param array $data
      * @return $this
      */
     public function view($view, array $data = [])
@@ -27,6 +27,12 @@ trait HasRenderer
     }
 
     public function render()
+    {
+        $content = $this->renderContent();
+        return $this->inlineStylesFor($content);
+    }
+
+    protected function renderContent()
     {
         return $this->getRenderer()->render($this->view, $this->buildViewData());
     }

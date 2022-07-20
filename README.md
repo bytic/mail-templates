@@ -14,3 +14,4 @@
 * https://github.com/Dreamvention/inky-premailer
 * https://github.com/petecoop/laravel-inky
 * https://github.com/spatie/laravel-database-mail-templates
+* https://github.com/lekoala/silverstripe-foundation-emails

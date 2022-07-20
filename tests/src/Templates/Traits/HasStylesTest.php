@@ -11,6 +11,7 @@ class HasStylesTest extends TestCase
     {
         $inkTemplate = new InkTemplate();
         $styles = $inkTemplate->getStyles();
-        self::assertStringEndsWith('/resources/Templates/Inkassets/css/ink.css', $styles[0]);
+        self::assertStringEndsWith(
+            '/resources/Templates/Ink/assets/foundation-emails.css', $styles[0]);
     }
 }
