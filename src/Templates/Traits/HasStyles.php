@@ -35,19 +35,23 @@ trait HasStyles
         return $this;
     }
 
-    protected function inlineStylesFor($content)
+    protected function generateStyles()
     {
-        if ($this->inlineStyles !== true) {
-            return $content;
-        }
-
         $styles = $this->getStyles();
         $css = '';
         foreach ($styles as $style) {
             $css .= file_get_contents($style);
 //            $content = str_replace($style['selector'], $style['style'], $content);
         }
+        return $css;
+    }
 
-        return (new CssToInlineStyles())->convert($content, $css);
+    protected function inlineStylesFor($content)
+    {
+        if ($this->inlineStyles !== true) {
+            return $content;
+        }
+
+        return (new CssToInlineStyles())->convert($content, $this->generateStyles());
     }
 }

@@ -2,8 +2,7 @@
 
 namespace Bytic\MailTemplates\Utility;
 
-use Bytic\MailTemplates\NotifierBuilderProvider;
-use Nip\Utility\Traits\SingletonTrait;
+use Bytic\MailTemplates\MailTemplatesProvider;
 
 /**
  * Class PackageConfig
@@ -11,5 +10,5 @@ use Nip\Utility\Traits\SingletonTrait;
  */
 class PackageConfig extends \ByTIC\PackageBase\Utility\PackageConfig
 {
-    protected $name = NotifierBuilderProvider::NAME;
+    protected $name = MailTemplatesProvider::NAME;
 }

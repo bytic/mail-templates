@@ -2,31 +2,19 @@
 
 namespace Bytic\MailTemplates\Configuration;
 
-class Configuration
+class Configuration implements \ArrayAccess
 {
-   protected array $logo = [];
+    use Traits\HasData;
+    use Traits\HasLogo;
 
     /**
-     * @return string
+     * Create a new configuration repository.
+     *
+     * @param array $array
      */
-    public function getLogoPath(): ?string
+    public function __construct(array $array = [])
     {
-        return $this->logo['path'] ?? null;
+
     }
 
-    /**
-     * @return string
-     */
-    public function getLogoUrl(): ?string
-    {
-        return $this->logo['url'] ?? null;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLogoLink(): ?string
-    {
-        return $this->logo['link'] ?? null;
-    }
 }

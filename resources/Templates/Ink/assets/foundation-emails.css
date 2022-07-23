@@ -942,7 +942,7 @@ p,
 td,
 th {
     color: #0a0a0a;
-    font-family: Helvetica, Arial, sans-serif;
+    /*font-family: Helvetica, Arial, sans-serif;*/
     font-weight: normal;
     padding: 0;
     margin: 0;
@@ -959,7 +959,7 @@ h5,
 h6 {
     color: inherit;
     word-wrap: normal;
-    font-family: Helvetica, Arial, sans-serif;
+    /*font-family: Helvetica, Arial, sans-serif;*/
     font-weight: normal;
     margin-bottom: 10px;
     Margin-bottom: 10px;
@@ -1049,7 +1049,7 @@ small,
 a {
     color: #2199e8;
     text-decoration: none;
-    font-family: Helvetica, Arial, sans-serif;
+    /*font-family: Helvetica, Arial, sans-serif;*/
     font-weight: normal;
     padding: 0;
     text-align: left;
@@ -1174,7 +1174,7 @@ table.button table td {
     border: 2px solid #2199e8;
 }
 table.button table td a {
-    font-family: Helvetica, Arial, sans-serif;
+    /*font-family: Helvetica, Arial, sans-serif;*/
     font-size: 16px;
     font-weight: bold;
     color: #fefefe;

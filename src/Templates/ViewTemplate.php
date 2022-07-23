@@ -3,7 +3,6 @@
 namespace Bytic\MailTemplates\Templates;
 
 use Bytic\MailTemplates\Renderer\AbstractRender;
-use Nip\View\View;
 
 abstract class ViewTemplate extends AbstractTemplate
 {

@@ -4,15 +4,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-</head>
-<body style="width:100% !important; min-height:1000px; color:#333333; background:#fff; font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.4;"
-      alink="#114eb1" link="#114eb1" bgcolor="#e0dbcf" text="#333333" yahoo="fix">
 
+    <?= $this->loadWithFallback('/emails/modules/head', 'Emails::/modules/head'); ?>
+</head>
+<body>
+
+<?= $this->loadWithFallback('/emails/modules/header', 'Emails::/modules/header'); ?>
+
+<?= $this->loadWithFallback('/emails/modules/content', 'Emails::/modules/content'); ?>
 <table style="width: 100%">
     <tr>
         <td style="width:15%"></td>
         <td style="width:70%;max-width: 600px">
-            <?= $this->loadWithFallback('/emails/modules/header', 'Emails::/modules/header'); ?>
 
 
             <?php if ($this->has('headerImage')) { ?>
@@ -21,14 +24,14 @@
             <?php } ?>
 
             <!-- content start -->
-            <?= $this->isBlock("content") ? $this->render("content") : null; ?>
             <!-- content end -->
 
-            <?= $this->loadWithFallback('/emails/modules/footer', 'Emails::/modules/footer'); ?>
         </td>
         <td style="width:15%"></td>
     </tr>
 </table>
+
+<?= $this->loadWithFallback('/emails/modules/footer', 'Emails::/modules/footer'); ?>
 
 <!-- prevent Gmail on iOS font size manipulation -->
 <div style="display:none; white-space:nowrap; font:15px courier; line-height:0;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
