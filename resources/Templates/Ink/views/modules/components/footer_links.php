@@ -1,14 +1,20 @@
 <?php
 
-$footerLinks = $this->configuration->get('footer.links', []);
+$footerLinks = $this->configuration->getFooterLinks();
 ?>
-<div class="social-links">
-    <menu style="width: auto">
-        <?php foreach ($footerLinks as $socialNetwork => $socialSettings) { ?>
-            <item href="<?= $socialSettings['url'] ?>">
-                <?= $socialSettings['label'] ?>
-            </item>
-        <?php } ?>
-    </menu>
+<div class="footer-links">
+    <container>
+        <row>
+            <columns>
+                <menu style="width: auto">
+                    <?php foreach ($footerLinks as $link) { ?>
+                        <item href="<?= $link['href'] ?>">
+                            <?= $link['label'] ?>
+                        </item>
+                    <?php } ?>
+                </menu>
+            </columns>
+        </row>
+    </container>
 </div>
 

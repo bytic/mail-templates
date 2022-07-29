@@ -7,24 +7,23 @@ trait HasLogo
     /**
      * @return string
      */
-    public function getLogoPath(): ?string
+    public function getLogoPath($type = null): ?string
     {
-        return $this->get('path', null);
+        $logoPath = $this->get(self::LOGO . '.' . $type, null);
+        if ($logoPath !== null) {
+            return $logoPath;
+        }
+
+        $logoPath = $this->get(self::LOGO . '.main', null);
+        if ($logoPath !== null) {
+            return $logoPath;
+        }
+        $logoPath = $this->get(self::LOGO, null);
+        return is_string($logoPath) ? $logoPath : null;
     }
 
-    /**
-     * @return string
-     */
-    public function getLogoUrl(): ?string
+    public function hasLogo($type = null): bool
     {
-        return $this->get('url', null);
-    }
-
-    /**
-     * @return string
-     */
-    public function getLogoLink(): ?string
-    {
-        return $this->get('link', null);
+        return $this->getLogoPath($type) !== null;
     }
 }

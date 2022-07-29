@@ -2,26 +2,29 @@
 
 namespace Bytic\MailTemplates\Tests\Templates\Traits;
 
-use Bytic\MailTemplates\Resources\Templates\Ink\InkTemplate;
-use Bytic\Phpqa\PHPUnit\TestCase;
+use Bytic\MailTemplates\Tests\Templates\AbstractTemplateAbstractTest;
 
-class HasRendererTest extends TestCase
+class HasRendererTest extends AbstractTemplateAbstractTest
 {
-    public function test_render()
+    public function test_render_boilerplate()
     {
-        $template = InkTemplate::create();
-        $template->addPath(TEST_FIXTURE_PATH . '/views/');
-        $template->with([
-            'content' => '/content/basic',
-            'name' => 'John'
-        ]);
-        $content = $template->render();
+        $this->test_render_template(
+            [
+                'content' => '/content/boilerplate',
+                'name' => 'John',
 
-        $pathEmail = TEST_FIXTURE_PATH . '/emails/basic.html';
-        file_put_contents($pathEmail, $content);
-        self::assertSame(
-            file_get_contents($pathEmail),
-            $content
+            ],
+            'content_boilerplate'
         );
+    }
+
+    public function test_render_content()
+    {
+        $this->test_render_template(
+            [
+                'content' => 'TestContentBasic',
+                'name' => 'John'
+            ],
+            'content_string');
     }
 }

@@ -14,6 +14,7 @@ class InkTemplate extends ViewTemplate
     {
         parent::__construct();
         $this->addStylesheet($this->getAbsolutePath('/assets/foundation-emails.css'));
+        $this->addStylesheet($this->getAbsolutePath('/assets/foundation-custom.css'));
     }
 
     public function renderContent()

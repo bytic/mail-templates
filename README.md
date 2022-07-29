@@ -5,6 +5,7 @@
 * https://github.com/murat/mail-template
 * https://github.com/yiimaker/yii2-email-templates
 * https://github.com/Snowfire/Beautymail
+* https://github.com/K-cermak/Enplated-Email
 
 #### Css Inliner tools
 * https://github.com/tijsverkoyen/CssToInlineStyles

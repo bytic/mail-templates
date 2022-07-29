@@ -1,13 +1,32 @@
 <?php
 
+use Bytic\MailTemplates\Configuration\Configuration;
 use Bytic\MailTemplates\Utility\SocialIcons;
 
-$socialLinks = $this->configuration->get('social', []);
+/** @var Configuration $configuration */
+$configuration = $this->configuration;
+$socialLinks = $this->configuration->getSocialLinks();
 ?>
 <div class="social-links">
-    <?php foreach ($socialLinks as $socialNetwork => $socialSettings) { ?>
-        <a href="<?= $socialSettings['url'] ?>" target="_blank">
-            <?= SocialIcons::network($socialNetwork); ?>
-        </a>
-    <?php } ?>
+    <row>
+        <columns>
+            <a href="<?= $configuration->getBrandUrl(); ?>">
+                <img src="<?= $configuration->getLogoPath() ?>" class="logo">
+            </a>
+        </columns>
+        <columns class="networks">
+            <p class="text-right">
+                <?php foreach ($socialLinks as $socialNetwork => $socialSettings) { ?>
+                    <?php
+                    $data = is_array($socialSettings) ? $socialSettings : ['url' => $socialSettings];
+                    $url = $data['url'];
+                    $network = $data['network'] ?? \Nip\Utility\Social\SocialNetworks::fromUrl($url);
+                    ?>
+                    <a href="<?= $url ?>" target="_blank">
+                        <?= SocialIcons::network($network); ?>
+                    </a>
+                <?php } ?>
+            </p>
+        </columns>
+    </row>
 </div>

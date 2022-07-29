@@ -171,6 +171,17 @@ trait HasData
         $this->set($key, null);
     }
 
+    public function appendToKey($key, $value, $innerKey = null)
+    {
+        $allValues = $this->get($key, []);
+        if (null === $innerKey) {
+            $allValues[] = $value;
+        } else {
+            $allValues[$innerKey] = $value;
+        }
+        $this->set($key, $allValues);
+    }
+
     /**
      * Merge another Config with this one.
      *

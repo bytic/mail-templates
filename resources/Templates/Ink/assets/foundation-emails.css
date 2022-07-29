@@ -1,3 +1,8 @@
+:root {
+    --global-width: 580px;
+    --body-font-family: Roboto,Helvetica,Arial,sans-serif;
+}
+
 .wrapper {
     width: 100%;
 }
@@ -93,7 +98,8 @@ table.body {
 }
 table.container {
     background: #fefefe;
-    width: 580px;
+    width: 100%;
+    max-width: var(--global-width);
     margin: 0 auto;
     Margin: 0 auto;
     text-align: inherit;
@@ -612,7 +618,7 @@ th.large-12.last {
 .collapse > tbody > tr > th.large-12:not([class*=large-offset]) {
     padding-right: 0;
     padding-left: 0;
-    width: 580px;
+    max-width: var(--global-width);
 }
 .collapse > tbody > tr td.large-12.first,
 .collapse > tbody > tr th.large-12.first,
@@ -741,7 +747,7 @@ table.container.radius {
 
 .block-grid {
     width: 100%;
-    max-width: 580px;
+    max-width: var(--global-width);
 }
 .block-grid td {
     display: inline-block;
@@ -942,7 +948,7 @@ p,
 td,
 th {
     color: #0a0a0a;
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: var(--body-font-family);
     font-weight: normal;
     padding: 0;
     margin: 0;
@@ -959,7 +965,7 @@ h5,
 h6 {
     color: inherit;
     word-wrap: normal;
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: var(--body-font-family);
     font-weight: normal;
     margin-bottom: 10px;
     Margin-bottom: 10px;
@@ -1049,7 +1055,7 @@ small,
 a {
     color: #2199e8;
     text-decoration: none;
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: var(--body-font-family);
     font-weight: normal;
     padding: 0;
     text-align: left;
@@ -1118,7 +1124,7 @@ table.h-line table {
 }
 table.hr th,
 table.h-line th {
-    width: 580px;
+    max-width: var(--global-width);
     height: 0;
     padding-top: 20px;
     clear: both;
@@ -1174,7 +1180,7 @@ table.button table td {
     border: 2px solid #2199e8;
 }
 table.button table td a {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: var(--body-font-family);
     font-size: 16px;
     font-weight: bold;
     color: #fefefe;
@@ -1393,7 +1399,8 @@ th.callout-inner.alert {
 }
 
 table.menu {
-    width: 580px;
+    width: 100%;
+    max-width: var(--global-width);
 }
 table.menu td.menu-item,
 table.menu th.menu-item {

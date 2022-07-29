@@ -7,11 +7,15 @@ $configuration = $this->get('configuration');
 ?>
 <div class="header">
     <container>
-        <columns>
-            <img src="<?= $configuration->getLogoUrl() ?>" style="max-width: 150px; margin: 3px 10px">
-        </columns>
-        <columns>
-            {{email_issue}}
-        </columns>
+        <row>
+            <columns>
+                <a href="<?= $configuration->getBrandUrl(); ?>">
+                    <img src="<?= $configuration->getLogoPath() ?>" class="logo">
+                </a>
+            </columns>
+            <columns>
+
+            </columns>
+        </row>
     </container>
 </div>

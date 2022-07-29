@@ -1,0 +1,58 @@
+
+.header {
+    padding-top: 15px;
+}
+
+.header .logo {
+    max-width: 150px;
+}
+table.hr th,
+table.h-line th {
+    padding-top: 10px;
+    border-bottom: 1px solid #dedede;
+}
+
+.footer .text-sm p {
+    font-size: 13.3333333333px;
+}
+.footer .text-center p {
+    text-align: center;
+}
+
+.footer .footer-links {
+    border-top: 1px solid #dedede;
+}
+
+.footer .logo {
+    max-width: 150px;
+}
+.footer .brand-name {
+    font-weight: bold;
+}
+.social-links {
+    padding: 20px 0 0;
+    border-bottom: 1px solid #dedede;
+}
+
+
+.social-links .networks a img {
+    display: inline-block;
+    margin: 0 5px;
+    width: 28px;
+    aspect-ratio: auto 28 / 28;
+    height: 28px;
+}
+
+.footer-links .menu {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.footer-links .menu .menu-item {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-right: 1px solid #dedede;
+}
+
+.footer-links .menu .menu-item:last-child {
+    border-right: none;
+}

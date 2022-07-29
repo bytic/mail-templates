@@ -9,9 +9,12 @@ abstract class ViewTemplate extends AbstractTemplate
     public function render()
     {
         $data = $this->buildViewData();
-        if (isset($data['content'])) {
+        if (isset($data['content']) && !empty($data['content'])) {
             $engine = $this->getRenderer()->engine();
-            $engine->setBlock('content', $data['content']);
+
+            if ($engine->existPath('/'.$data['content'])) {
+                $engine->setBlock('content', $data['content']);
+            }
         }
         return parent::render();
     }

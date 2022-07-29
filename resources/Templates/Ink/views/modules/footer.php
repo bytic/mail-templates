@@ -1,31 +1,30 @@
 <?php
+
+use Bytic\MailTemplates\Configuration\Configuration;
+
+/** @var Configuration $configuration */
+$configuration = $this->configuration;
 ?>
 <div class="footer">
     <container>
-        <row class="">
+        <?php if ($configuration->hasSocialLinks()) : ?>
+            <?= $this->load('Emails::/modules/components/social_links'); ?>
+        <?php endif; ?>
+
+        <spacer size="16"></spacer>
+        <row>
             <columns>
-                <spacer size="16"></spacer>
-                <h4 class="brand-name">
-                    <?= $this->configuration->get('brand.name'); ?>
-                </h4>
-                <p class="text-sm">
-                    <?= $this->configuration->get('footer.copyright'); ?>
-                </p>
+                <h5 class="brand-name">
+                    <?= $configuration->getBrandName(); ?>
+                </h5>
+                <div class="text-sm">
+                    <?= $configuration->get('footer.copyright'); ?>
+                </div>
             </columns>
         </row>
 
-        <row class="">
-            <columns>
-                <?= $this->load('Emails::/modules/components/social_links'); ?>
-            </columns>
-        </row>
-
-        <row class="">
-            <columns>
-                <h-line></h-line>
-
-                <?= $this->load('Emails::/modules/components/footer_links'); ?>
-            </columns>
-        </row>
+        <?php if ($configuration->hasFooterLinks()) : ?>
+            <?= $this->load('Emails::/modules/components/footer_links'); ?>
+        <?php endif; ?>
     </container>
 </div>

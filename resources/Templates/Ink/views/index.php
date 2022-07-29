@@ -10,27 +10,7 @@
 <body>
 
 <?= $this->loadWithFallback('/emails/modules/header', 'Emails::/modules/header'); ?>
-
 <?= $this->loadWithFallback('/emails/modules/content', 'Emails::/modules/content'); ?>
-<table style="width: 100%">
-    <tr>
-        <td style="width:15%"></td>
-        <td style="width:70%;max-width: 600px">
-
-
-            <?php if ($this->has('headerImage')) { ?>
-                <img style="width: 100%;display: block; max-width: 100%" src="<?php echo $this->headerImage; ?>">
-                <p>&nbsp;</p>
-            <?php } ?>
-
-            <!-- content start -->
-            <!-- content end -->
-
-        </td>
-        <td style="width:15%"></td>
-    </tr>
-</table>
-
 <?= $this->loadWithFallback('/emails/modules/footer', 'Emails::/modules/footer'); ?>
 
 <!-- prevent Gmail on iOS font size manipulation -->
