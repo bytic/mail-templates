@@ -3,6 +3,7 @@
 namespace Bytic\MailTemplates\Resources\Templates\Ink;
 
 use Bytic\MailTemplates\Configuration\Configuration;
+use Nip\Utility\Arr;
 use Pinky;
 use Bytic\MailTemplates\Templates\ViewTemplate;
 
@@ -22,11 +23,11 @@ class InkTemplate extends ViewTemplate
         $body = parent::renderContent();
         return false === ($html = Pinky\transformString($body)->saveHTML()) ? '' : $html;
     }
-    protected function generateConfiguration(): Configuration
+
+    protected function generateConfigurationData()
     {
-        $configuration = parent::generateConfiguration();
-        $data =require __DIR__ . '/config/default.php';
-        $configuration->merge($data['settings']);
-        return $configuration;
+        $data = parent::generateConfigurationData();
+        $dataDefault = require __DIR__ . '/config/default.php';
+        return $dataDefault + $data;
     }
 }

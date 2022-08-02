@@ -23,8 +23,13 @@ trait Configurable
 
     protected function generateConfiguration(): Configuration
     {
-        $baseSettings = PackageConfig::settings();
-        $configuration = new Configuration($baseSettings);
+        $configuration = new Configuration($this->generateConfigurationData());
         return $configuration;
+    }
+
+    protected function generateConfigurationData()
+    {
+        $data = PackageConfig::settings();
+        return $data;
     }
 }

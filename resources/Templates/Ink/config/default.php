@@ -38,13 +38,5 @@ return [
                 ]
             ],
         ],
-        'brand' => [
-            'name' => 'My brand',
-        ],
-        'logo' => [
-            'url' => null,
-            'path' => null,
-            'link' => null,
-        ],
     ]
 ];
