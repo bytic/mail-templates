@@ -2,6 +2,8 @@
 
 namespace Bytic\MailTemplates\Configuration;
 
+use Bytic\MailTemplates\Utility\PackageConfig;
+
 trait Configurable
 {
     protected Configuration $configuration;
@@ -21,7 +23,8 @@ trait Configurable
 
     protected function generateConfiguration(): Configuration
     {
-        $configuration = new Configuration();
+        $baseSettings = PackageConfig::settings();
+        $configuration = new Configuration($baseSettings);
         return $configuration;
     }
 }
