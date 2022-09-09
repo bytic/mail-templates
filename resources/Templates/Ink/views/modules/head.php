@@ -33,7 +33,7 @@ use Bytic\MailTemplates\Utility\Html;
     }
 
     .footer .container p {
-    <?= Html::buildCssStyles(\Nip\Utility\Arr::only($this->configuration->get('style.footer.inner.style'),['color'])); ?>;
+    <?= Html::buildCssStyles(\Nip\Utility\Arr::only($this->configuration->get('style.footer.inner.style', []),['color'])); ?>;
     }
 
 
