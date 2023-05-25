@@ -2,6 +2,7 @@
 
 use Bytic\MailTemplates\Configuration\Configuration;
 use Bytic\MailTemplates\Utility\SocialIcons;
+use Nip\Utility\Social\SocialNetworks;
 
 /** @var Configuration $configuration */
 $configuration = $this->configuration;
@@ -20,10 +21,11 @@ $socialLinks = $this->configuration->getSocialLinks();
                     <?php
                     $data = is_array($socialSettings) ? $socialSettings : ['url' => $socialSettings];
                     $url = $data['url'];
-                    $network = $data['network'] ?? \Nip\Utility\Social\SocialNetworks::fromUrl($url);
+                    $network = $data['network'] ?? SocialNetworks::fromUrl($url);
+                    $src = $data['src'] ?? null;
                     ?>
                     <a href="<?= $url ?>" target="_blank">
-                        <?= SocialIcons::network($network); ?>
+                        <?= SocialIcons::network($network, $src); ?>
                     </a>
                 <?php } ?>
             </p>

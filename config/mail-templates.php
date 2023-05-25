@@ -17,12 +17,15 @@ return [
         'social' => [
             'facebook' => [
                 'url' => null,
+                'src' => null,
             ],
             'twitter' => [
                 'url' => null,
+                'src' => null,
             ],
             'instagram' => [
                 'url' => null,
+                'src' => null,
             ],
         ],
     ]
