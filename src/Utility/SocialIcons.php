@@ -17,30 +17,33 @@ class SocialIcons
 
     public static function facebook($src = null): AbstractTag
     {
-        $src = $src ?: self::FACEBOOK_SVG;
-        return Tag::tag('img')->setAttribute('src', $src);
+        return self::generateImgTag($src ?: self::FACEBOOK_SVG);
     }
 
     public static function instagram($src = null): AbstractTag
     {
-        $src = $src ?: self::INSTAGRAM_SVG;
-        return Tag::tag('img')->setAttribute('src', $src);
+        return self::generateImgTag($src ?: self::INSTAGRAM_SVG);
     }
 
     public static function twitter($src): AbstractTag
     {
-        $src = $src ?: self::TWITTER_SVG;
-        return Tag::tag('img')->setAttribute('src', $src);
+        return self::generateImgTag($src ?: self::TWITTER_SVG);
     }
 
     public static function youtube($src): AbstractTag
     {
-        $src = $src ?: self::YOUTUBE_SVG;
-        return Tag::tag('img')->setAttribute('src', $src);
+        return self::generateImgTag($src ?: self::YOUTUBE_SVG);
     }
 
     public static function network(string $socialNetwork, $src = null)
     {
         return call_user_func(self::class . '::' . $socialNetwork, $src);
+    }
+
+    protected static function generateImgTag($src)
+    {
+        return Tag::tag('img')
+            ->setAttribute('style', 'width: 24px; height: 24px;')
+            ->setAttribute('src', $src);
     }
 }
