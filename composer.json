@@ -23,8 +23,8 @@
     }
   },
   "require": {
-    "bytic/mail": "^1.0",
-    "bytic/view": "^1.0",
+    "bytic/mail": "^1.0|^2.0",
+    "bytic/view": "^1.0|^2.0",
     "bytic/package-base": "^1.0",
     "tijsverkoyen/css-to-inline-styles": "^2.2.2",
     "lorenzo/pinky": "^1.0.5"
